@@ -1,5 +1,6 @@
 import React from "react";
 import { Message } from "./Message";
+import { Welcome } from "./Welcome";
 
 export class Hello extends React.Component{
     render(){
@@ -15,6 +16,7 @@ export class App extends React.Component{
           <div>
             <Hello />
             <Message />
+            <Welcome name="Ciccio"/>
           </div>
         );
     }
