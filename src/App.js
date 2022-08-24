@@ -9,9 +9,10 @@ export class HelloWorld extends React.Component{
 export class App extends React.Component{
     render(){
         return (
-            <div>
-                <HelloWorld />
-            </div>
-        )
+          <div>
+            <HelloWorld />
+            <p>What a beautiful day!</p>
+          </div>
+        );
     }
 }
