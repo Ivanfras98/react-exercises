@@ -16,7 +16,8 @@ export class App extends React.Component{
           <div>
             <Hello />
             <Message />
-            <Welcome name="Ciccio"/>
+            <Welcome /> {/*  Welcome lasciato con prop di default */}
+            <Welcome name="Ciccio" /> {/* Welcome Chiamato con Prop */}
           </div>
         );
     }
