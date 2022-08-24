@@ -16,7 +16,7 @@ export class App extends React.Component{
           <div>
             <Hello />
             <Message />
-            <Welcome name="Ciccio" age= "24" /> {/* Welcome Chiamato con Prop */}
+            <Welcome name="Ciccio" age= {24} /> {/* Welcome Chiamato con Prop */}
           </div>
         );
     }
