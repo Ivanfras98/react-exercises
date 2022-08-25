@@ -2,6 +2,6 @@ import React from "react";
 
 export class CounterDisplay extends React.Component{
     render(){
-        return <h1> Count : {this.props.displayedCounter} </h1>
+        return <h1> Count : {this.props.constDisplayCount} </h1>
     }
 }
