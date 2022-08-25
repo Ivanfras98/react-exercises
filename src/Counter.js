@@ -4,9 +4,9 @@ export class Counter extends React.Component{
    constructor(props){
     super(props)
     this.state = {
-        count : 0,
+        count : this.props.initialValue,
     }
-    setInterval(()=> this.setState((state)=> ({count : this.state.count +1})) ,1000)
+    setInterval(()=> this.setState((state)=> ({count : state.count + this.props.incrementValue})) , this.props.incrementInterval)
    }
    render(){
     return <h1> {this.state.count} </h1>
