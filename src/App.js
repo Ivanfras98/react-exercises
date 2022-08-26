@@ -1,4 +1,5 @@
 import React from "react";
+import { ClickTracker } from "./ClickTracker";
 import { Counter } from "./Counter";
 import { Message } from "./Message";
 import { Welcome } from "./Welcome";
@@ -17,6 +18,7 @@ export class App extends React.Component {
         <Message />
         <Welcome name="John" age={24} />
         <Counter initialValue={5} />
+        <ClickTracker />
       </div>
     );
   }
