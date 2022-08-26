@@ -1,6 +1,8 @@
 import React from "react";
+import { createRef } from "react";
 
 export class UncontrolledLogin extends React.Component {
+  _userNameRef = createRef()
   SubmitHandler = (event) => {
     event.preventDefault();
     const username = event.target.elements.username.value;
@@ -9,11 +11,14 @@ export class UncontrolledLogin extends React.Component {
     
     this.props.passFunc({username,password,remember})
   };
+  componentDidMount(){
+    this._userNameRef.current.focus()
+  }
 
   render() {
     return (
       <form onSubmit={this.SubmitHandler}>
-        <input name="username" />
+        <input ref={this._userNameRef} name="username" />
         <input name="password" type="password" />
         <input name="remember" type="checkbox" />
         <button type="submit">Login</button>
