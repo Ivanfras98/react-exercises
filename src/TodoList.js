@@ -19,6 +19,11 @@ export class TodoList extends React.Component {
         return state2.items
     }));
   };
+  resetTodosHandler = ()=>{
+    this.setState({
+        items : []
+    })
+  }
 
   render() {
     return (
@@ -37,6 +42,7 @@ export class TodoList extends React.Component {
         <button name="button" onClick={this.buttonEventHandler}>
           Add todo
         </button>
+        <button onClick={this.resetTodosHandler}>Reset Todos</button>
       </>
     );
   }
