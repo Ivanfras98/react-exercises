@@ -8,6 +8,7 @@ export class TodoList extends React.Component {
   inputChangeEventHandler = (event) => {
     this.setState({
       todo: event.target.value,
+      focus : event.target
     });
   };
   buttonEventHandler = () => {
@@ -22,6 +23,7 @@ export class TodoList extends React.Component {
   render() {
     return (
       <>
+        <h3>Todo List:</h3>
         <ul>
           {this.state.items.map((todo, index) => (
             <li key={index}>{todo}</li>
