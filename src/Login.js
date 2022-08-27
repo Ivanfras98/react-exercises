@@ -12,6 +12,7 @@ export class Login extends React.Component {
     const value = event.target.value;
     const checked = event.target.checked;
     const type = event.target.type;
+    console.log(name)
     this.setState(
       {
         [name]: type === "checkbox" ? checked : value,
