@@ -1,5 +1,6 @@
 import React from "react";
 import { ClickTracker } from "./ClickTracker";
+import { Container } from "./Container";
 import { Counter } from "./Counter";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
@@ -14,21 +15,21 @@ export class Hello extends React.Component {
 }
 
 export class App extends React.Component {
-  onLogin(state){
-    console.log(state)
+  onLogin(state) {
+    console.log(state);
   }
   render() {
     return (
-      <div>
+      <Container>
         <Hello />
         <Message />
         <InteractiveWelcome />
         <Counter initialValue={5} />
         <ClickTracker />
-        <Login passFunc= {this.onLogin} />
+        <Login passFunc={this.onLogin} />
         {/* <UncontrolledLogin passFunc = {this.onLogin}/>  */}
         <TodoList />
-      </div>
+      </Container>
     );
   }
 }
