@@ -18,9 +18,10 @@ export class App extends React.Component {
   onLogin(state) {
     console.log(state);
   }
+
   render() {
     return (
-      <Container title = "My Awesome App">
+      <Container title="My Awesome App">
         <Hello />
         <Message />
         <InteractiveWelcome />
@@ -28,7 +29,24 @@ export class App extends React.Component {
         <ClickTracker />
         <Login passFunc={this.onLogin} />
         {/* <UncontrolledLogin passFunc = {this.onLogin}/>  */}
-        <TodoList />
+        <TodoList
+          render={(items, del) => {
+            return (
+              <>
+                <ul>
+                  {items.map((todo, index) => (
+                    <li key={index}>
+                      {todo}{" "}
+                      <button name={index} onClick={del}>
+                        Delete
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            );
+          }}
+        ></TodoList>
       </Container>
     );
   }
