@@ -1,7 +1,8 @@
 import React from "react";
+import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { Container } from "./Container";
-import { Counter } from "./Counter";
+// import { Counter } from "./Counter";
 import { DisplayLanguage } from "./DisplayLanguage";
 // import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
@@ -52,7 +53,8 @@ export class App extends React.Component {
         <Message />
         <Welcome name="Ivan" age={24} />
         {/* <InteractiveWelcome /> */}
-        <Counter initialValue={5} />
+        {/* <Counter initialValue={5} /> */}
+        <ClickCounter initialValue={5}/>
         <ClickTracker />
         <Login passFunc={this.onLogin} />
         {/* <UncontrolledLogin passFunc = {this.onLogin}/>  */}
