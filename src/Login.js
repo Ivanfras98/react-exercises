@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // import React from "react";
 export function Login({ passFunc }) {
@@ -18,14 +18,7 @@ export function Login({ passFunc }) {
       };
     });
   }
-  useEffect(() => {
-    return setData((data) => {
-      return {
-        ...data,
-        disabled: data.username !== "" && data.password !== "" ? false : true,
-      };
-    });
-  }, [data]);
+
   function HandleLoginClick() {
     passFunc(data);
   }
@@ -54,7 +47,7 @@ export function Login({ passFunc }) {
         name="remember"
         type="checkbox"
       ></input>
-      <button type="button" disabled={data.disabled} onClick={HandleLoginClick}>
+      <button type="button" disabled={data.username && data.password ? false : true} onClick={HandleLoginClick}>
         Login
       </button>
       <button type="button" onClick={resetAll}>
