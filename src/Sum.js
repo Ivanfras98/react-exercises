@@ -1,4 +1,4 @@
-export function Sum({numbers}) {
+export function Sum({numbers = [2,4,6]}) {
     let mystyle = {
         color : "red"
     }
