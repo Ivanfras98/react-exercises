@@ -48,7 +48,7 @@ export class App extends React.Component {
           <DisplayLanguage ciccio={this.state.language} />
         </LanguageContext.Provider>
         <Hello />
-        <Sum numbers={[1, 2, 3]} />
+        <Sum />
         <Message />
         <Welcome name="Ivan" age={24} />
         {/* <InteractiveWelcome /> */}
