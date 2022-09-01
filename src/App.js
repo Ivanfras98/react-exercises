@@ -54,7 +54,7 @@ export class App extends React.Component {
         <Welcome name="Ivan" age={24} />
         {/* <InteractiveWelcome /> */}
         {/* <Counter initialValue={5} /> */}
-        <ClickCounter initialValue={5}/>
+        <ClickCounter initialValue={5} />
         <ClickTracker />
         <Login passFunc={this.onLogin} />
         {/* <UncontrolledLogin passFunc = {this.onLogin}/>  */}
