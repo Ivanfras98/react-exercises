@@ -5,6 +5,8 @@ import { Container } from "./Container";
 import { Counter } from "./Counter";
 // import { Counter } from "./Counter";
 import { DisplayLanguage } from "./DisplayLanguage";
+import { GithubUser } from "./GithubUser";
+// import { GithubUser } from "./GitHubUser";
 // import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
 import { Login } from "./Login";
@@ -55,6 +57,7 @@ export class App extends React.Component {
           <DisplayLanguage ciccio={this.state.language} />
         </LanguageContext.Provider>
         <Hello />
+        <GithubUser username="Ivanfras98" /> 
         <Sum />
         <Message />
         <Welcome name="Ivan" age={24} />
