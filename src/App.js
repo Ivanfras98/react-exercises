@@ -1,7 +1,8 @@
 import React from "react";
-import { ClickCounter } from "./ClickCounter";
+// import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { Container } from "./Container";
+import { Counter } from "./Counter";
 // import { Counter } from "./Counter";
 import { DisplayLanguage } from "./DisplayLanguage";
 // import { InteractiveWelcome } from "./InteractiveWelcome";
@@ -25,14 +26,19 @@ export class App extends React.Component {
     console.log(state);
   }
   state = {
-    language : "en"
+    language : "en", 
+    count : true
   }
   HandleSelectChanges = (event)=> {
     this.setState({
       language : event.target.value
     })
   }
-
+  
+  hideCounter = () => {
+    this.setState((state)=> state.count = !state.count)
+  }
+  
   render() {
     return (
       <Container title="My Awesome App">
@@ -54,7 +60,9 @@ export class App extends React.Component {
         <Welcome name="Ivan" age={24} />
         {/* <InteractiveWelcome /> */}
         {/* <Counter initialValue={5} /> */}
-        <ClickCounter initialValue={5} />
+        {/* <ClickCounter initialValue={5} /> */}
+        <button onClick={this.hideCounter}>Toggle counter</button>
+        {this.state.count && <Counter />}
         <ClickTracker />
         <Login passFunc={this.onLogin} />
         {/* <UncontrolledLogin passFunc = {this.onLogin}/>  */}
