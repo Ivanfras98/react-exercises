@@ -6,6 +6,7 @@ import { Counter } from "./Counter";
 // import { Counter } from "./Counter";
 import { DisplayLanguage } from "./DisplayLanguage";
 import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 // import { GithubUser } from "./GitHubUser";
 // import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
@@ -53,11 +54,11 @@ export class App extends React.Component {
             <option value="it">Italiano</option>
           </select>
         </div>
+        <GithubUserList />
         <LanguageContext.Provider value={this.state.language}>
           <DisplayLanguage ciccio={this.state.language} />
         </LanguageContext.Provider>
-        <Hello />
-        <GithubUser username="Ivanfras98" /> 
+        <Hello /> 
         <Sum />
         <Message />
         <Welcome name="Ivan" age={24} />
