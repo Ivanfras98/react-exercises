@@ -14,6 +14,7 @@ import { Login } from "./Login";
 import { Message } from "./Message";
 import { Sum } from "./Sum";
 import { TodoList } from "./TodoList";
+import { Inputs } from "./useInput";
 import { Welcome } from "./Welcome";
 // import { UncontrolledLogin } from "./UncontrolledLogin";
 
@@ -45,7 +46,8 @@ export class App extends React.Component {
   render() {
     return (
       <Container title="My Awesome App">
-        <div>
+        <Inputs />
+        {/* <div>
           <select
             value={this.state.language}
             onChange={this.HandleSelectChanges}
@@ -61,16 +63,16 @@ export class App extends React.Component {
         <Hello /> 
         <Sum />
         <Message />
-        <Welcome name="Ivan" age={24} />
+        <Welcome name="Ivan" age={24} /> */}
         {/* <InteractiveWelcome /> */}
         {/* <Counter initialValue={5} /> */}
-        <ClickCounter initialValue={5} />
+        {/* <ClickCounter initialValue={5} />
         <button onClick={this.hideCounter}>Toggle counter</button>
         {this.state.count && <Counter />}
         <ClickTracker />
-        <Login passFunc={this.onLogin} />
+        <Login passFunc={this.onLogin} /> */}
         {/* <UncontrolledLogin passFunc = {this.onLogin}/>  */}
-        <TodoList
+        {/* <TodoList
           render={(items, del) => {
             return (
               <>
@@ -87,7 +89,7 @@ export class App extends React.Component {
               </>
             );
           }}
-        ></TodoList>
+        ></TodoList> */}
       </Container>
     );
   }
