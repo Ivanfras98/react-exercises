@@ -1,5 +1,5 @@
 import React from "react";
-// import { ClickCounter } from "./ClickCounter";
+import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { Container } from "./Container";
 import { Counter } from "./Counter";
@@ -64,7 +64,7 @@ export class App extends React.Component {
         <Welcome name="Ivan" age={24} />
         {/* <InteractiveWelcome /> */}
         {/* <Counter initialValue={5} /> */}
-        {/* <ClickCounter initialValue={5} /> */}
+        <ClickCounter initialValue={5} />
         <button onClick={this.hideCounter}>Toggle counter</button>
         {this.state.count && <Counter />}
         <ClickTracker />
