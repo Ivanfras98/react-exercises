@@ -5,6 +5,7 @@ import { Container } from "./Container";
 import { Counter } from "./Counter";
 // import { Counter } from "./Counter";
 import { DisplayLanguage } from "./DisplayLanguage";
+import { FilteredList } from "./FilteredList";
 import { GithubUser } from "./GithubUser";
 import { GithubUserList } from "./GithubUserList";
 // import { GithubUser } from "./GitHubUser";
@@ -47,6 +48,7 @@ export class App extends React.Component {
     return (
       <Container title="My Awesome App">
         {/* <Inputs /> */}
+        <FilteredList />
         <div>
           <select
             value={this.state.language}
