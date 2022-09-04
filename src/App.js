@@ -1,13 +1,23 @@
 import React from "react";
+import { CarDetails } from "./CarDetails";
+import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { Container } from "./Container";
 import { Counter } from "./Counter";
+// import { Counter } from "./Counter";
 import { DisplayLanguage } from "./DisplayLanguage";
-import { InteractiveWelcome } from "./InteractiveWelcome";
+import { FilteredList } from "./FilteredList";
+import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
+// import { GithubUser } from "./GitHubUser";
+// import { InteractiveWelcome } from "./InteractiveWelcome";
 import { LanguageContext } from "./LanguageContext";
 import { Login } from "./Login";
 import { Message } from "./Message";
+import { Sum } from "./Sum";
 import { TodoList } from "./TodoList";
+import { Inputs } from "./useInput";
+import { Welcome } from "./Welcome";
 // import { UncontrolledLogin } from "./UncontrolledLogin";
 
 
@@ -22,17 +32,25 @@ export class App extends React.Component {
     console.log(state);
   }
   state = {
-    language : "en"
+    language : "en", 
+    count : true
   }
   HandleSelectChanges = (event)=> {
     this.setState({
       language : event.target.value
     })
   }
-
+  
+  hideCounter = () => {
+    this.setState((state)=> state.count = !state.count)
+  }
+  
   render() {
     return (
       <Container title="My Awesome App">
+        {/* <Inputs /> */}
+        <FilteredList />
+        <CarDetails />
         <div>
           <select
             value={this.state.language}
@@ -42,15 +60,22 @@ export class App extends React.Component {
             <option value="it">Italiano</option>
           </select>
         </div>
+        {/* <GithubUserList /> */}
+        <GithubUser username="Ivanfras98"/>
         <LanguageContext.Provider value={this.state.language}>
-          <DisplayLanguage ciccio = {this.state.language} />
+          <DisplayLanguage />
         </LanguageContext.Provider>
-        <Hello />
+        <Hello /> 
+        <Sum />
         <Message />
-        <InteractiveWelcome />
+        <Welcome name="Ivan" age={24} />
+        {/* <InteractiveWelcome /> */}
         <Counter initialValue={5} />
+        <ClickCounter initialValue={5} />
+        <button onClick={this.hideCounter}>Toggle counter</button>
+        {this.state.count && <Counter />}
         <ClickTracker />
-        <Login passFunc={this.onLogin} />
+        <Login passFunc={this.onLogin} /> 
         {/* <UncontrolledLogin passFunc = {this.onLogin}/>  */}
         <TodoList
           render={(items, del) => {
