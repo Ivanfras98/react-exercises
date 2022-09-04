@@ -63,7 +63,7 @@ export class App extends React.Component {
         {/* <GithubUserList /> */}
         <GithubUser username="Ivanfras98"/>
         <LanguageContext.Provider value={this.state.language}>
-          <DisplayLanguage ciccio={this.state.language} />
+          <DisplayLanguage />
         </LanguageContext.Provider>
         <Hello /> 
         <Sum />
