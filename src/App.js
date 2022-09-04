@@ -1,4 +1,5 @@
 import React from "react";
+import { CarDetails } from "./CarDetails";
 import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { Container } from "./Container";
@@ -49,6 +50,7 @@ export class App extends React.Component {
       <Container title="My Awesome App">
         {/* <Inputs /> */}
         <FilteredList />
+        <CarDetails />
         <div>
           <select
             value={this.state.language}
