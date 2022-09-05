@@ -11,7 +11,8 @@ export function AppRoute() {
       <Routes>
         <Route path="/" element={<Welcome name="Ivan" age={24} />}></Route>
         <Route path="/counter" element={<Counter />}></Route>
-        <Route path="/:username" element={<ShowGithubUser />}></Route>
+        {/* <Route path="/:username" element={<ShowGithubUser />}></Route> */}
+        <Route path="*" element={"Content not found"}></Route>
       </Routes>
       <div>
         <Link to="/">Welcome</Link> |
