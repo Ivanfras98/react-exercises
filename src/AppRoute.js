@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { Container } from "./Container";
 import { Counter } from "./Counter";
 import { Login } from "./Login";
@@ -13,6 +13,11 @@ export function AppRoute() {
         <Route path="/counter" element={<Counter />}></Route>
         <Route path="/:username" element={<ShowGithubUser />}></Route>
       </Routes>
+      <div>
+        <Link to="/">Welcome</Link> |
+        <Link to="/counter">Counter</Link> |
+        <Link to="/:username">GitHubUser</Link> |
+      </div>
     </Container>
   );
 }
