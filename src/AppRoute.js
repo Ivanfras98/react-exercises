@@ -15,12 +15,12 @@ export function AppRoute() {
         {/* <Route path="/:username" element={<ShowGithubUser />}></Route> */}
         <Route path="*" element={"Content not found"}></Route>
         <Route path="/users" element={<GithubUserList />}>
-          <Route path=":username" element={<ShowGithubUser />}/>
+          <Route index element={<p>Add a user and select it</p>}></Route>
+          <Route path=":username" element={<ShowGithubUser />} />
         </Route>
       </Routes>
       <div>
-        <Link to="/">Welcome</Link> |
-        <Link to="/counter">Counter</Link> |
+        <Link to="/">Welcome</Link> |<Link to="/counter">Counter</Link> |
         <Link to="/users">GitHubUser</Link> |
       </div>
     </Container>
