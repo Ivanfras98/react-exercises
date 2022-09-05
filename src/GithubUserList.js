@@ -30,7 +30,12 @@ export function GithubUserList() {
   return (
     <div>
       <ul>
-        <li><Link to="/users/Ivanfras98">Persona Github</Link></li>
+        <li>
+          <Link to="/users/Ivanfras98">Persona Github 1</Link>
+        </li>
+        <li>
+          <Link to="/users/AlexSgherri">Persona Github 2</Link>
+        </li>
       </ul>
       <Outlet />
     </div>
