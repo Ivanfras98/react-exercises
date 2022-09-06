@@ -11,10 +11,15 @@ const fetcher = async url => {
 
 export function useGithubUser(username) {
   const API = "https://api.github.com/users/";
-  const {data, error} = useSWR(()=> username ? `${API}${username}` : null, fetcher)
+  const {data, error, mutate} = useSWR(()=> username ? `${API}${username}` : null, fetcher)
+  
+  function handleFetchData(){
+    mutate()
+  }
   return {
     data,
     error,
-    fetcher,
+    handleFetchData,
+
   };
 }
