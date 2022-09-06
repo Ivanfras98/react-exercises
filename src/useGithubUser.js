@@ -11,7 +11,7 @@ const fetcher = async url => {
 
 export function useGithubUser(username) {
   const API = "https://api.github.com/users/";
-  const {data, error} = useSWR(`${API}${username}`, fetcher)
+  const {data, error} = useSWR(()=> username ? `${API}${username}` : null, fetcher)
   return {
     data,
     error,
