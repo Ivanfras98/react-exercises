@@ -17,7 +17,7 @@ export function CarDetails({
       inputRef.current.elements.model.value = "";
       inputRef.current.elements.year.value = "";
       inputRef.current.elements.color.value = "";
-    } else return;
+    }
   }, [inputChange]);
 
   function handleInputChange() {
