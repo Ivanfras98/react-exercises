@@ -5,7 +5,7 @@ export function ShowGithubUser() {
   const { username } = useParams()
   return (
     <>
-      <GithubUser username={null} />
+      <GithubUser username={username} />
     </>
   );
 }

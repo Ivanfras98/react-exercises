@@ -4,29 +4,6 @@ import { GithubUser } from "./GithubUser";
 import { ShowGithubUser } from "./ShowGithubUser";
 
 export function GithubUserList() {
-  const [gituser, setGitUser] = useState({
-    user: [],
-    insert: "",
-  });
-
-  function HandleInputChanges(e) {
-    setGitUser(() => {
-      return {
-        user: [...gituser.user],
-        insert: e.target.value,
-      };
-    });
-  }
-  function HandleButtonSubmit() {
-    setGitUser((data) => {
-      console.log(data);
-      return {
-        user: data.insert === "" ? [data.user] : data.user.push(data.insert),
-        ...data,
-      };
-    });
-  }
-  const { user } = gituser;
   return (
     <div>
       <ul>
