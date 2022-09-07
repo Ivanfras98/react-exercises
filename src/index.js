@@ -5,7 +5,7 @@ import "./index.css"
 import { BrowserRouter } from "react-router-dom";
 import { AppRoute } from "./AppRoute";
 import { store } from "./state/Store";
-import { incremetCounter } from "./state/CounterState";
+
 
 const root = ReactDOM.createRoot(document.querySelector("#root"))
 
