@@ -1,22 +1,23 @@
+import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers, legacy_createStore as createStore } from "redux";
-import { counterReducer, incremetCounter } from "./CounterState";
-import { addTodo, editTodo, removeTodo, TodosReducer } from "./TodoState";
+import { counterState } from "./CounterState";
+import { addTodo, editTodo, removeTodo, todoState } from "./TodoState";
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
-  todo: TodosReducer,
+  counter: counterState.reducer,
+  todo: todoState.reducer,
 });
-
 export const store = createStore(rootReducer);
-store.subscribe(() => {
-  console.log("The store is :", store.getState());
-});
 
-store.dispatch(incremetCounter(5));
-store.dispatch(addTodo(1, "Lavare i piatti", true));
-store.dispatch(editTodo(1, "Studiare Redux", false))
-store.dispatch(addTodo(2, "Studiare", true));
-store.dispatch(addTodo(3, "Uscire", false));
-store.dispatch(removeTodo(2))
-store.dispatch(removeTodo(3))
+store.subscribe(()=> {
+  console.log(store.getState())
+})
+
+store.dispatch(counterState.actions.increment(5));
+store.dispatch(todoState.actions.add({id : 1, title : "Lavare i piatti", completed : true}));
+store.dispatch(todoState.actions.edit({id : 1, title : "Cucinare", completed : true}));
+ store.dispatch(todoState.actions.add({id : 2 , title : "Studiare", completed : true}));
+ store.dispatch(todoState.actions.add({id : 3 , title : "Uscire", completed : false}));
+store.dispatch(todoState.actions.remove({id : 2}));
+store.dispatch(todoState.actions.remove({id : 3}));
 

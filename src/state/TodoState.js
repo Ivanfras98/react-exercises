@@ -1,98 +1,17 @@
-import { logDOM } from "@testing-library/react";
+import { createSlice } from "@reduxjs/toolkit";
 
-const defaultValue = [];
-
-const ADD = "TODO@ADD";
-const REMOVE = "TODO@REMOVE";
-const EDIT = "TODO@EDIT";
-
-export function addTodo(setId, setTitle, setCompleted) {
-  return {
-    type: ADD,
-    payload: {
-      setId,
-      setTitle,
-      setCompleted,
-    },
-  };
-}
-
-export function removeTodo(setId, setTitle, setCompleted, id) {
-  return {
-    type: REMOVE,
-    payload: {
-      setId,
-      setTitle,
-      setCompleted,
-    },
-  };
-}
-
-export function editTodo(setId, setTitle, setCompleted) {
-  return {
-    type: EDIT,
-    payload: {
-      setId,
-      setTitle,
-      setCompleted,
-    },
-  };
-}
-
-export function TodosReducer(state = defaultValue, action) {
-  switch (action.type) {
-    case ADD: {
-      return [
-        ...state,
-        {
-          id: action.payload.setId,
-          title: action.payload.setTitle,
-          completed: action.payload.setCompleted,
-        },
-      ];
-    }
-
-    case REMOVE: {
-      if (state.filter((e) => e.id !== action.payload.setId)) {
-        return state.filter((e) => e.id !== action.payload.setId);
+export const todoState = createSlice({
+  name: "todo",
+  initialState: [],
+  reducers: {
+    add: (state, action) => [...state, action.payload],
+    remove: (state, action) => state.filter((e) => e.id !== action.payload.id),
+    edit : (state, action) => {
+      const {id } = action.payload
+      const user = state.find(u => u.id === id)
+      for (let key in action.payload){
+         user[key] = action.payload[key]
       }
-      return state;
     }
-
-    case EDIT: {
-      state.find((e) => {
-        if (e.id === action.payload.setId) {
-            state.splice(state.indexOf(e), 1)
-          return [
-            ...state,
-            {
-              id: e.id,
-              title: action.payload.setTitle,
-              completed: action.payload.setCompleted,
-            },
-          ];
-        }
-        return [
-          ...state,
-          {
-            id: e.id,
-            title: action.payload.setTitle,
-            completed: action.payload.setCompleted,
-          },
-        ];
-      });
-      return [
-        ...state,
-        {
-          id: action.payload.setId,
-          title: action.payload.setTitle,
-          completed: action.payload.setCompleted,
-        },
-      ];
-    }
-
-    default: {
-      return defaultValue;
-    }
-  }
-}
+  },
+});
